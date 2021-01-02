@@ -1,5 +1,5 @@
 {
-  "name": "React Starter",
+  "name": "react-starter",
   "version": "1.0.0",
   "description": "React Starter Project",
   "main": "index.js",
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/thewaqasPro/React-Starter#readme",
   "dependencies": {
-    "validator": "^13.5.2",
-    "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   }
 }
