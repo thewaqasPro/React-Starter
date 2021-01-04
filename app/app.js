@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import ProgressBar from './components/progressBar'
 
-
 function App() {
     const [score, setScore] = useState(0)
     const [mistakes, setMistakes] = useState(0)
@@ -66,9 +65,7 @@ function App() {
     return (
       <>
         
-        <div
-          className={"main-ui" + (mistakes == 3 || score == 10 ? " blurred" : "")}
-        >
+        <div className={"main-ui" + (mistakes == 3 || score == 10 ? " blurred" : "")}>
           <p className={"problem" + (showError ? " animate-wrong" : "")}>
             {currentProblem.numberOne} {currentProblem.operator}{" "}
             {currentProblem.numberTwo}
@@ -94,11 +91,7 @@ function App() {
           <ProgressBar score={score} />
         </div>
   
-        <div
-          className={
-            "overlay" + (mistakes == 3 || score == 10 ? " overlay--visible" : "")
-          }
-        >
+        <div className={"overlay" + (mistakes == 3 || score == 10 ? " overlay--visible" : "")}>
           <div className="overlay-inner">
             <p className="end-message">
               {score == 10 ? "Congrats! You won." : "Sorry! You lost."}
