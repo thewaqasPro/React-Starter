@@ -64,7 +64,6 @@ function App() {
 
     return (
       <>
-        
         <div className={"main-ui" + (mistakes == 3 || score == 10 ? " blurred" : "")}>
           <p className={"problem" + (showError ? " animate-wrong" : "")}>
             {currentProblem.numberOne} {currentProblem.operator}{" "}
@@ -90,13 +89,7 @@ function App() {
             <p className="end-message">
               {score == 10 ? "Congrats! You won." : "Sorry! You lost."}
             </p>
-            <button
-              ref={resetButton}
-              onClick={resetGame}
-              className="reset-button"
-            >
-              Start Over
-            </button>
+            <button ref={resetButton} onClick={resetGame} className="reset-button">Start Over</button>
           </div>
         </div>
       </>
