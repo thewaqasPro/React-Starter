@@ -71,8 +71,7 @@ function App() {
           </p>
   
           <form onSubmit={handleSubmit} action="" className="our-form">
-            <input ref={answerField} value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)} type="text" className="our-field" autoComplete="off"
-            />
+            <input ref={answerField} value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)} type="text" className="our-field" autoComplete="off"/>
             <button>Submit</button>
           </form>
   
@@ -82,6 +81,7 @@ function App() {
           </p>
   
           <ProgressBar score={score} />
+          
         </div>
   
         <div className={"overlay" + (mistakes == 3 || score == 10 ? " overlay--visible" : "")}>
