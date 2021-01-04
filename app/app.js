@@ -62,7 +62,7 @@ function App() {
       setCurrentProblem(generateProblem())
       answerField.current.focus()
     }
-  
+
     return (
       <>
         
