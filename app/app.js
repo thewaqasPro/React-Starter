@@ -72,13 +72,7 @@ function App() {
           </p>
   
           <form onSubmit={handleSubmit} action="" className="our-form">
-            <input
-              ref={answerField}
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              type="text"
-              className="our-field"
-              autoComplete="off"
+            <input ref={answerField} value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)} type="text" className="our-field" autoComplete="off"
             />
             <button>Submit</button>
           </form>
@@ -107,11 +101,10 @@ function App() {
         </div>
       </>
     )
-  }
+}
   
-  ReactDOM.render(<App />, document.getElementById("app"))
+ReactDOM.render(<App />, document.getElementById("app"))
   
-
 if (module.hot) {
     module.hot.accept()
 }
