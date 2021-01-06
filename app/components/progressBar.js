@@ -20,4 +20,5 @@ function ProgressBar(props) {
         </div>
     )
 }
+
 export default ProgressBar
