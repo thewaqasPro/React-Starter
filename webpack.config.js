@@ -2,10 +2,10 @@ const currentTask = process.env.npm_lifecycle_event
 
 const path = require('path') 
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const {WebpackManifestPlugin} = require('webpack-manifest-plugin')
+const MiniCssExtractPlugin      = require( 'mini-css-extract-plugin')
+const HtmlWebpackPlugin         = require( 'html-webpack-plugin')
+const {CleanWebpackPlugin}      = require( 'clean-webpack-plugin')
+const {WebpackManifestPlugin}   = require( 'webpack-manifest-plugin')
 
 const config = 
 {
@@ -15,7 +15,15 @@ const config =
         filename: 'bundle.[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
-    plugins: [ new HtmlWebpackPlugin( {template: './app/index.html'} ) ],
+    plugins: 
+    [ 
+        new HtmlWebpackPlugin
+        ( 
+            {
+                template: './app/index.html'
+            } 
+        ) 
+    ],
     mode: 'development',
     devtool: 'eval-cheap-source-map',
     devServer: 
@@ -26,40 +34,49 @@ const config =
     },
     module: 
     {
-        rules: [{
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader', 'sass-loader'] 
-        },
-        {
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: 
-                    [ 
+        rules: 
+        [   
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'] 
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: 
                         [ 
-                            '@babel/preset-env', 
-                            { 
-                                'useBuiltIns'   : 'usage', 
-                                'corejs'        : 3, 
-                                'targets'       : 'defaults' 
-                            } 
-                        ], 
-                        '@babel/preset-react'
-                    ]
+                            [ 
+                                '@babel/preset-env', 
+                                { 
+                                    'useBuiltIns'   : 'usage', 
+                                    'corejs'        : 3, 
+                                    'targets'       : 'defaults' 
+                                } 
+                            ], 
+                            '@babel/preset-react'
+                        ]
+                    }
                 }
             }
-        }]
+        ]
     }
-
 }
 
-if (currentTask == "build")  {
+if (currentTask == "build")  
+{
     config.mode = "production"
     config.module.rules[0].use[0] = MiniCssExtractPlugin.loader
-    config.plugins.push( 
-        new MiniCssExtractPlugin( { filename: 'style.[hash].css' } ), 
+    config.plugins.push
+    ( 
+        new MiniCssExtractPlugin
+        ( 
+            { 
+                filename: 'style.[hash].css' 
+            } 
+        ), 
         new CleanWebpackPlugin(), 
         new WebpackManifestPlugin()
     )
