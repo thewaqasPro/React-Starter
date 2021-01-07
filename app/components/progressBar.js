@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function ProgressBar(props) {
     return (
         <div className="progress">
@@ -20,5 +19,4 @@ function ProgressBar(props) {
         </div>
     )
 }
-
 export default ProgressBar
